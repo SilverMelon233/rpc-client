@@ -14,5 +14,5 @@ dependencies {
     compileOnly 'org.apache.tomcat:annotations-api:6.0.53'
 }
 application {
-    mainClass = project.hasProperty('mainClass') ? project.mainClass : 'Server'
+    mainClass = project.hasProperty('mainClass') ? project.mainClass : 'DemoClient'
 }

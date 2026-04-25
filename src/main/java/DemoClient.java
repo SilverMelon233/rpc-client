@@ -3,7 +3,7 @@ import demo.v1.V1;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
-public class Client {
+public class DemoClient {
     public static void main(String[] args) throws Exception {
         String serverAddr = System.getenv("SERVER_ADDR");
         if (serverAddr == null || serverAddr.isEmpty()) {
