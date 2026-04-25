@@ -1,5 +1,10 @@
 <?php
-require __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/gen/Demo/V1/EchoRequest.php';
+require_once __DIR__ . '/gen/Demo/V1/EchoResponse.php';
+require_once __DIR__ . '/gen/Demo/V1/HealthRequest.php';
+require_once __DIR__ . '/gen/Demo/V1/HealthResponse.php';
+require_once __DIR__ . '/gen/Demo/V1/DemoServiceClient.php';
+require_once __DIR__ . '/gen/GPBMetadata/Demo/V1.php';
 
 use Demo\V1\DemoServiceClient;
 use Demo\V1\EchoRequest;
