@@ -8,9 +8,9 @@ repositories {
     mavenCentral()
     }
 dependencies {
-    implementation("io.grpc:grpc-netty-shaded:1.68.1")
-    implementation("io.grpc:grpc-protobuf:1.68.1")
-    implementation("io.grpc:grpc-kotlin-stub:1.4.1")
+    implementation("io.grpc:grpc-netty-shaded:1.73.0")
+    implementation("io.grpc:grpc-protobuf:1.73.0")
+    implementation("io.grpc:grpc-kotlin-stub:1.5.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
     compileOnly("org.apache.tomcat:annotations-api:6.0.53")
 }
