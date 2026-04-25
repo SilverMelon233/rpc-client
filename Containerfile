@@ -16,8 +16,9 @@ COPY --from=ext-build /opt/php-8.5/lib/php/extensions/no-debug-non-zts-20250925/
      /opt/php-8.5/lib/php/extensions/no-debug-non-zts-20250925/grpc.so
 COPY --from=ext-build /opt/php-8.5/lib/php/extensions/no-debug-non-zts-20250925/protobuf.so \
      /opt/php-8.5/lib/php/extensions/no-debug-non-zts-20250925/protobuf.so
-RUN echo "extension=grpc.so" >> /opt/php-8.5/etc/php/php.ini \
- && echo "extension=protobuf.so" >> /opt/php-8.5/etc/php/php.ini
+RUN mkdir -p /opt/php-8.5/etc/php/conf.d \
+ && echo "extension=grpc.so" > /opt/php-8.5/etc/php/conf.d/grpc.ini \
+ && echo "extension=protobuf.so" > /opt/php-8.5/etc/php/conf.d/protobuf.ini
 COPY --from=composer-build /app/vendor vendor/
 COPY gen/ gen/
 COPY demo_client.php .
