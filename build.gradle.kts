@@ -16,7 +16,7 @@ dependencies {
     runtimeOnly("io.netty:netty-tcnative-boringssl-static:2.0.70.Final")
     compileOnly("org.apache.tomcat:annotations-api:6.0.53")
 }
-application { mainClass.set("DemoClientKt") }
+application { mainClass.set("DemoClient") }
 tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar>().configureEach {
     duplicatesStrategy = DuplicatesStrategy.INCLUDE
     mergeServiceFiles()
