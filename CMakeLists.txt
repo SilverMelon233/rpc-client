@@ -8,5 +8,5 @@ find_package(gRPC REQUIRED)
 
 
 include_directories(gen)
-add_executable(client client.cc gen/demo/v1.pb.cc gen/demo/v1.grpc.pb.cc)
-target_link_libraries(client PRIVATE gRPC::grpc++ protobuf::libprotobuf)
+add_executable(demo-client demo_client.cc gen/demo/v1.pb.cc gen/demo/v1.grpc.pb.cc)
+target_link_libraries(demo-client PRIVATE gRPC::grpc++ protobuf::libprotobuf)
