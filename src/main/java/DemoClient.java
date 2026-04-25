@@ -11,15 +11,13 @@ public class DemoClient {
         String host = serverAddr.contains(":") ? serverAddr.substring(0, serverAddr.lastIndexOf(':')) : serverAddr;
         int port = serverAddr.contains(":") ? Integer.parseInt(serverAddr.substring(serverAddr.lastIndexOf(':') + 1)) : 50051;
 
-        // grpc-java 1.80 may resolve hostnames with '-' as unix sockets.
-        // Setting defaultServiceConfig overrides the resolver to use pick_first/round_robin.
         ManagedChannel channel = ManagedChannelBuilder
                 .forAddress(host, port)
                 .usePlaintext()
-                .defaultLoadBalancingPolicy("pick_first")
                 .build();
 
-        DemoServiceGrpc.DemoServiceBlockingV2Stub stub = DemoServiceGrpc.newBlockingV2Stub(channel);
+        // Use blocking stub (compatible with grpc-java 1.73.0)
+        DemoServiceGrpc.DemoServiceBlockingStub stub = DemoServiceGrpc.newBlockingStub(channel);
 
         V1.EchoResponse echoRes = stub.echo(V1.EchoRequest.newBuilder().setMessage("hello from java client").build());
         System.out.println("Echo response: " + echoRes.getMessage());
