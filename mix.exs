@@ -7,13 +7,13 @@ defmodule DemoClient.MixProject do
       version: "0.1.0",
       elixir: "~> 1.17",
       start_permanent: Mix.env() == :prod,
-      deps: deps(),
-      escript: [main_module: DemoClient]
+      releases: [demo_client: [include_executables_for: [:unix]]],
+      deps: deps()
     ]
   end
 
   def application do
-    [extra_applications: [:logger]]
+    [mod: {DemoClient.Application, []}, extra_applications: [:logger]]
   end
 
   defp deps do
