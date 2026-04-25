@@ -2,6 +2,7 @@ FROM dhi.io/dart:3-alpine3.22-dev AS build
 WORKDIR /app
 COPY pubspec.yaml .
 RUN dart pub get
+COPY lib/ lib/
 COPY bin/ bin/
 RUN dart compile exe bin/demo_client.dart -o /app/demo_client
 
