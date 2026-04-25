@@ -1,8 +1,8 @@
 import * as grpc from '@grpc/grpc-js';
 import { GrpcTransport } from '@protobuf-ts/grpc-transport';
-import { DemoServiceClient } from '@silvermelon233/rpc-demo-stub/client';
-import { EchoRequest } from '@silvermelon233/rpc-demo-stub';
-import { Empty } from '@silvermelon233/rpc-demo-stub/google/protobuf/empty';
+import { DemoServiceClient } from './gen/demo/v1.client.js';
+import { EchoRequest } from './gen/demo/v1.js';
+import { Empty } from './gen/google/protobuf/empty.js';
 
 const addr = process.env.SERVER_ADDR ?? 'server:50051';
 const transport = new GrpcTransport({
