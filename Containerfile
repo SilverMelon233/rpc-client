@@ -4,5 +4,5 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 WORKDIR /app
 COPY composer.json .
 RUN composer install --no-dev
-COPY client.php .
-CMD ["php", "client.php"]
+COPY demo_client.php .
+CMD ["php", "demo_client.php"]
