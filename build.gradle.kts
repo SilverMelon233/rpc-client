@@ -20,5 +20,5 @@ application { mainClass.set("DemoClient") }
 tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar>().configureEach {
     duplicatesStrategy = DuplicatesStrategy.INCLUDE
     mergeServiceFiles()
-    manifest { attributes["Main-Class"] = "DemoClientKt" }
+    manifest { attributes["Main-Class"] = "DemoClient" }
 }
