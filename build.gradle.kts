@@ -9,7 +9,7 @@ repositories {
     maven { url = uri("https://jitpack.io") }
 }
 dependencies {
-    implementation("com.github.SilverMelon233.rpc-stub:kotlin:main-SNAPSHOT")
+    implementation("com.github.SilverMelon233.rpc-stub:kotlin:kotlin-SNAPSHOT")
     implementation("io.grpc:grpc-netty-shaded:1.68.1")
     implementation("io.grpc:grpc-stub:1.68.1")
     implementation("io.grpc:grpc-protobuf:1.68.1")
