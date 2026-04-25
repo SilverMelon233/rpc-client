@@ -3,8 +3,8 @@ WORKDIR /app
 COPY pubspec.yaml .
 RUN dart pub get
 COPY bin/ bin/
-RUN dart compile exe bin/client.dart -o /app/client
+RUN dart compile exe bin/demo_client.dart -o /app/demo_client
 
 FROM dhi.io/alpine-base:3.23
-COPY --from=build /app/client /usr/local/bin/client
-CMD ["/usr/local/bin/client"]
+COPY --from=build /app/demo_client /usr/local/bin/demo-client
+CMD ["/usr/local/bin/demo-client"]
