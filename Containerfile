@@ -7,6 +7,6 @@ RUN cargo build --release
 
 FROM dhi.io/alpine-base:3.23
 COPY --from=builder /usr/lib/libgcc_s.so.1 /lib/
-COPY --from=builder /app/target/release/client /client
+COPY --from=builder /app/target/release/demo-client /demo-client
 EXPOSE 50051
-CMD ["/client"]
+CMD ["/demo-client"]
