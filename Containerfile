@@ -5,7 +5,7 @@ WORKDIR /app
 COPY CMakeLists.txt .
 COPY demo_client.cc .
 COPY proto/ proto/
-RUN cmake -B build -G Ninja \
+RUN CFLAGS="-include stdint.h" CXXFLAGS="-include stdint.h" cmake -B build -G Ninja \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_EXE_LINKER_FLAGS="-static -static-libgcc -static-libstdc++" \
     -Wno-dev . \
