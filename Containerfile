@@ -1,6 +1,6 @@
 # Stage 1: compile ext-grpc and ext-protobuf
 FROM dhi.io/php:8-alpine3.22-dev AS ext-build
-RUN apk add --no-cache gcc make g++ autoconf linux-headers
+RUN apk add --no-cache gcc make g++ autoconf linux-headers zlib-dev
 RUN pecl install grpc protobuf
 
 # Stage 2: install composer dependencies
