@@ -1,19 +1,18 @@
-name := "demo-client"
-organization := "com.silvermelos233"
+name := "scala-client"
+organization := "com.example"
 version := "0.1.0"
 scalaVersion := "3.4.2"
 
-
 libraryDependencies ++= Seq(
   "com.thesamet.scalapb" %% "scalapb-runtime-grpc" % "0.11.20",
-  "io.grpc" % "grpc-netty-shaded" % "1.73.0",
+  "io.grpc"               % "grpc-netty-shaded"    % "1.80.0",
   "com.thesamet.scalapb.zio-grpc" %% "zio-grpc-core" % "0.6.3",
-  "dev.zio" %% "zio" % "2.1.9",
+  "dev.zio" %% "zio" % "2.1.25",
 )
 
 assembly / mainClass := Some("Client")
 assembly / assemblyMergeStrategy := {
   case PathList("META-INF", "io.netty.versions.properties") => MergeStrategy.first
-  case PathList("META-INF", xs @ _*) => MergeStrategy.discard
-  case x => MergeStrategy.first
+  case PathList("META-INF", xs @ _*)                        => MergeStrategy.discard
+  case _                                                     => MergeStrategy.first
 }
