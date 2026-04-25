@@ -5,9 +5,9 @@ scalaVersion := "3.4.2"
 
 
 libraryDependencies ++= Seq(
-  "com.thesamet.scalapb" %% "scalapb-runtime-grpc" % "0.11.17",
-  "io.grpc" % "grpc-netty-shaded" % "1.68.1",
-  "com.thesamet.scalapb.zio-grpc" %% "zio-grpc-core" % "0.6.2",
+  "com.thesamet.scalapb" %% "scalapb-runtime-grpc" % "0.11.20",
+  "io.grpc" % "grpc-netty-shaded" % "1.73.0",
+  "com.thesamet.scalapb.zio-grpc" %% "zio-grpc-core" % "0.6.3",
   "dev.zio" %% "zio" % "2.1.9",
 )
 
