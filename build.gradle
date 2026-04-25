@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'application'
+    id 'com.gradleup.shadow' version '9.4.1'
 }
 group = 'com.example'
 repositories { mavenCentral() }
@@ -15,11 +16,7 @@ dependencies {
 application {
     mainClass = 'DemoClient'
 }
-jar {
+tasks.named('shadowJar') {
+    mergeServiceFiles()
     manifest { attributes 'Main-Class': 'DemoClient' }
 }
-task copyDeps(type: Copy) {
-    from configurations.runtimeClasspath
-    into 'build/libs/deps'
-}
-build.dependsOn copyDeps
