@@ -1,4 +1,4 @@
-module github.com/SilverMelon233/rpc-client/golang
+module app
 
 go 1.24
 

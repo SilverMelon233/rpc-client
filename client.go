@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	demov1 "github.com/SilverMelon233/rpc-stub/gen/demo"
+	demov1 "app/gen/demo"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/protobuf/types/known/emptypb"
