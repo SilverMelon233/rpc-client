@@ -1,7 +1,7 @@
 import demo.v1.DemoServiceGrpc;
 import demo.v1.V1;
 import io.grpc.ManagedChannel;
-import io.grpc.ManagedChannelBuilder;
+import io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder;
 
 public class DemoClient {
     public static void main(String[] args) throws Exception {
@@ -11,9 +11,7 @@ public class DemoClient {
         String host = serverAddr.contains(":") ? serverAddr.substring(0, serverAddr.lastIndexOf(':')) : serverAddr;
         int port = serverAddr.contains(":") ? Integer.parseInt(serverAddr.substring(serverAddr.lastIndexOf(':') + 1)) : 50051;
 
-        // Force DNS resolution with dns:/// scheme to avoid unix socket resolver
-        ManagedChannel channel = ManagedChannelBuilder
-                .forTarget("dns:///" + host + ":" + port)
+        ManagedChannel channel = NettyChannelBuilder.forAddress(host, port)
                 .usePlaintext()
                 .build();
 
