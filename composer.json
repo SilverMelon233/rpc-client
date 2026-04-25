@@ -8,6 +8,6 @@
     }
   ],
   "require": {
-    "silvermelos233/rpc-demo-stub": "dev-main"
+    "silvermelon233/rpc-demo-stub": "dev-php"
   }
 }
