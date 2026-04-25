@@ -9,6 +9,7 @@ find_package(gRPC REQUIRED)
 include(FetchContent)
 FetchContent_Declare(rpc_stub
   GIT_REPOSITORY https://github.com/SilverMelon233/rpc-stub.git
+  GIT_TAG        cpp
   GIT_TAG main
   SOURCE_SUBDIR cpp
 )
