@@ -1,7 +1,7 @@
 name := "scala-client"
 organization := "com.example"
 version := "0.1.0"
-scalaVersion := "3.4.2"
+scalaVersion := "3.8.3"
 
 libraryDependencies ++= Seq(
   "com.thesamet.scalapb" %% "scalapb-runtime-grpc" % "0.11.20",
