@@ -1,7 +1,6 @@
 import GRPC
 import NIO
 import SwiftProtobuf
-import DemoStub
 
 let serverAddr = ProcessInfo.processInfo.environment["SERVER_ADDR"] ?? "localhost:50051"
 let parts = serverAddr.split(separator: ":")

@@ -8,23 +8,13 @@ let package = Package(
         .package(url: "https://github.com/apple/swift-protobuf.git", from: "1.37.0"),
     ],
     targets: [
-        .target(
-            name: "DemoStub",
-            dependencies: [
-                .product(name: "GRPC", package: "grpc-swift"),
-                .product(name: "SwiftProtobuf", package: "swift-protobuf"),
-            ],
-            path: "Sources/DemoStub"
-        ),
         .executableTarget(
             name: "demo-client",
             dependencies: [
                 .product(name: "GRPC", package: "grpc-swift"),
                 .product(name: "SwiftProtobuf", package: "swift-protobuf"),
-                "DemoStub",
             ],
-            path: "Sources",
-            exclude: ["DemoStub"]
+            path: "Sources"
         )
     ]
 )
