@@ -1,4 +1,10 @@
-use demo_stub::demo::v1::{
+pub mod demo {
+    pub mod v1 {
+        include!(concat!(env!("CARGO_MANIFEST_DIR"), "/src/gen/demo/v1/demo.v1.rs"));
+    }
+}
+
+use crate::demo::v1::{
     demo_service_client::DemoServiceClient,
     EchoRequest,
 };
