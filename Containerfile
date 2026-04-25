@@ -3,9 +3,15 @@ RUN apk add --no-cache grpc-dev protobuf-dev cmake samurai g++ openssl-dev git
 WORKDIR /app
 COPY CMakeLists.txt .
 COPY demo_client.cc .
-COPY gen/ gen/
-RUN cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release .
-RUN cmake --build build
+COPY proto/ proto/
+RUN mkdir -p gen/demo && \
+    protoc --proto_path=proto \
+           --cpp_out=gen \
+           --grpc_out=gen \
+           --plugin=protoc-gen-grpc=/usr/bin/grpc_cpp_plugin \
+           proto/demo/v1.proto
+RUN cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release . \
+ && cmake --build build
 
 FROM dhi.io/alpine-base:3.23
 COPY --from=build /app/build/demo-client /usr/local/bin/client
