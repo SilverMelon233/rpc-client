@@ -3,9 +3,5 @@ version: 0.1.0
 environment:
   sdk: ^3.0.0
 dependencies:
-  demo_stub:
-    git:
-      url: "https://github.com/SilverMelon233/rpc-stub.git"
-      ref: dart
   grpc: ^4.0.0
   protobuf: ^3.1.0

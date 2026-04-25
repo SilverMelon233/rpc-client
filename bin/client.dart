@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:grpc/grpc.dart';
-import 'package:demo_stub/demo/v1.pbgrpc.dart';
+import '../lib/demo/v1.pbgrpc.dart';
 import 'package:protobuf/well_known_types/google/protobuf/empty.pb.dart';
 
 Future<void> main(List<String> args) async {
