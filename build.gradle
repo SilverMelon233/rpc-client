@@ -6,16 +6,15 @@ plugins {
 group = 'com.example'
 repositories { mavenCentral() }
 dependencies {
-    implementation 'io.grpc:grpc-netty-shaded:1.80.0'
+    implementation 'io.grpc:grpc-netty:1.80.0'
     implementation 'io.grpc:grpc-stub:1.80.0'
     implementation 'io.grpc:grpc-protobuf:1.80.0'
     implementation 'com.google.protobuf:protobuf-java:4.34.1'
     implementation 'com.google.guava:guava:33.6.0-jre'
+    runtimeOnly 'io.netty:netty-tcnative-boringssl-static:2.0.70.Final'
     compileOnly 'org.apache.tomcat:annotations-api:6.0.53'
 }
-application {
-    mainClass = 'DemoClient'
-}
+application { mainClass = 'DemoClient' }
 tasks.named('shadowJar') {
     mergeServiceFiles()
     manifest { attributes 'Main-Class': 'DemoClient' }
