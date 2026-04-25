@@ -10,7 +10,7 @@ COPY lib/ lib/
 RUN mix compile
 RUN mix escript.build
 
-FROM dhi.io/alpine-base:3.23
+FROM dhi.io/erlang-otp:28-alpine3.23
 WORKDIR /app
 COPY --from=build /app/demo_client .
 CMD ["/app/demo_client"]
