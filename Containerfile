@@ -1,5 +1,4 @@
 FROM dhi.io/ruby:4-alpine3.23-dev AS build
-RUN apk add --no-cache git
 WORKDIR /app
 COPY Gemfile .
 RUN bundle install
