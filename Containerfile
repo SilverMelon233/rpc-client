@@ -1,4 +1,5 @@
 FROM dhi.io/erlang-otp:28-alpine3.23-dev AS build
+RUN apk add --no-cache elixir git
 WORKDIR /app
 ENV MIX_ENV=prod
 RUN mix local.hex --force && mix local.rebar --force
