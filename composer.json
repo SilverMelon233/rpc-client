@@ -1,0 +1,13 @@
+{
+  "name": "demo/client",
+  "type": "project",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/SilverMelon233/rpc-stub"
+    }
+  ],
+  "require": {
+    "silvermelos233/rpc-demo-stub": "dev-main"
+  }
+}
