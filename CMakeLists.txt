@@ -9,5 +9,6 @@ pkg_check_modules(PROTOBUF REQUIRED protobuf)
 
 include_directories(gen ${GRPC_INCLUDE_DIRS} ${PROTOBUF_INCLUDE_DIRS})
 add_executable(demo-client demo_client.cc gen/demo/v1.pb.cc gen/demo/v1.grpc.pb.cc)
-target_link_libraries(demo-client PRIVATE ${GRPC_LIBRARIES} ${PROTOBUF_LIBRARIES})
+target_link_libraries(demo-client PRIVATE ${GRPC_STATIC_LIBRARIES} ${PROTOBUF_STATIC_LIBRARIES} -static-libgcc -static-libstdc++)
 target_link_directories(demo-client PRIVATE ${GRPC_LIBRARY_DIRS} ${PROTOBUF_LIBRARY_DIRS})
+set_target_properties(demo-client PROPERTIES LINK_FLAGS "-static -static-libgcc -static-libstdc++")
