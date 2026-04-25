@@ -1,6 +1,6 @@
 import os
 import grpc
-from demo_stub.demo import v1_pb2, v1_pb2_grpc
+from demo import v1_pb2, v1_pb2_grpc
 from google.protobuf import empty_pb2
 
 
