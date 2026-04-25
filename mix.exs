@@ -19,7 +19,7 @@ defmodule DemoClient.MixProject do
   defp deps do
     [
       {:grpc, "~> 0.11"},
-      {:protobuf, "~> 0.16"}
+      {:protobuf, "~> 0.15"}
     ]
   end
 end
