@@ -25,4 +25,5 @@ fun main() = runBlocking {
     println("Health response: ${healthResponse.status}")
 
     channel.shutdown()
+    Unit
 }
