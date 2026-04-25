@@ -18,7 +18,7 @@ defmodule DemoClient.MixProject do
 
   defp deps do
     [
-      {:demo_stub, git: "https://github.com/SilverMelon233/rpc-stub", sparse: "elixir"},
+      {:demo_stub, git: "https://github.com/SilverMelon233/rpc-stub", ref: "elixir"},
       {:grpc, "~> 0.9"},
       {:protobuf, "~> 0.13"}
     ]
