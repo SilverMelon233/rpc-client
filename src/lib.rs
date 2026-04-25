@@ -1,4 +1,5 @@
 pub extern crate prost;
+pub extern crate tonic_prost;
 
 pub mod demo {
     pub mod v1 {
