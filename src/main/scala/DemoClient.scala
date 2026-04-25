@@ -5,7 +5,7 @@ import scalapb.zio_grpc.ZManagedChannel
 import io.grpc.ManagedChannelBuilder
 import zio.*
 
-object Client extends ZIOAppDefault:
+object DemoClient extends ZIOAppDefault:
   def run =
     val serverAddr = sys.env.getOrElse("SERVER_ADDR", "server:50051")
     val stripped = serverAddr.stripPrefix("http://").stripPrefix("https://")

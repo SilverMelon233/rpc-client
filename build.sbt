@@ -10,7 +10,7 @@ libraryDependencies ++= Seq(
   "dev.zio" %% "zio" % "2.1.25",
 )
 
-assembly / mainClass := Some("Client")
+assembly / mainClass := Some("DemoClient")
 assembly / assemblyMergeStrategy := {
   case PathList("META-INF", "io.netty.versions.properties") => MergeStrategy.first
   case PathList("META-INF", xs @ _*)                        => MergeStrategy.discard
