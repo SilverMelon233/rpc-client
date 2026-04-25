@@ -6,15 +6,19 @@ plugins {
 group = "com.example"
 repositories { mavenCentral() }
 dependencies {
-    implementation("io.grpc:grpc-netty-shaded:1.80.0")
+    implementation("io.grpc:grpc-netty:1.80.0")
     implementation("io.grpc:grpc-stub:1.80.0")
     implementation("io.grpc:grpc-protobuf:1.80.0")
     implementation("io.grpc:grpc-kotlin-stub:1.5.0")
     implementation("com.google.protobuf:protobuf-java:4.34.1")
     implementation("com.google.protobuf:protobuf-kotlin:4.34.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
+    runtimeOnly("io.netty:netty-tcnative-boringssl-static:2.0.70.Final")
     compileOnly("org.apache.tomcat:annotations-api:6.0.53")
 }
-application {
-    mainClass.set("ServerKt")
+application { mainClass.set("DemoClientKt") }
+tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar>().configureEach {
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+    mergeServiceFiles()
+    manifest { attributes["Main-Class"] = "DemoClientKt" }
 }
