@@ -15,7 +15,7 @@ dependencies {
     compileOnly 'org.apache.tomcat:annotations-api:6.0.53'
 }
 application { mainClass = 'DemoClient' }
-tasks.named('shadowJar') {
+shadowJar {
     mergeServiceFiles()
     manifest { attributes 'Main-Class': 'DemoClient' }
 }
