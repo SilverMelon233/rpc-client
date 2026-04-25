@@ -229,8 +229,8 @@ public final class DemoServiceGrpc {
      * Echo a message back to the caller.
      * </pre>
      */
-    public demo.v1.V1.EchoResponse echo(demo.v1.V1.EchoRequest request) throws io.grpc.StatusException {
-      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+    public demo.v1.V1.EchoResponse echo(demo.v1.V1.EchoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getEchoMethod(), getCallOptions(), request);
     }
 
@@ -239,8 +239,8 @@ public final class DemoServiceGrpc {
      * Return the current health status of this service.
      * </pre>
      */
-    public demo.v1.V1.HealthResponse health(com.google.protobuf.Empty request) throws io.grpc.StatusException {
-      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+    public demo.v1.V1.HealthResponse health(com.google.protobuf.Empty request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getHealthMethod(), getCallOptions(), request);
     }
   }
