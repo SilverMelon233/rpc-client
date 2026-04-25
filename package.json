@@ -2,7 +2,7 @@
   "name": "demo-client",
   "type": "module",
   "dependencies": {
-    "@grpc/grpc-js": "^1.13.0",
+    "@grpc/grpc-js": "^1.14.3",
     "@protobuf-ts/grpc-transport": "^2.11.1",
     "@protobuf-ts/runtime": "^2.11.1",
     "@protobuf-ts/runtime-rpc": "^2.11.1"
