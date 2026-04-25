@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
     name: "demo-client",
     dependencies: [
-        .package(url: "https://github.com/SilverMelon233/rpc-stub.git", branch: "main"),
+        .package(url: "https://github.com/SilverMelon233/rpc-stub.git", branch: "swift"),
         .package(url: "https://github.com/grpc/grpc-swift.git", from: "1.24.0"),
         .package(url: "https://github.com/apple/swift-protobuf.git", from: "1.28.0"),
     ],
