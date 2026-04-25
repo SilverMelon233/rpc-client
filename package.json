@@ -1,0 +1,11 @@
+{
+  "name": "demo-client",
+  "type": "module",
+  "dependencies": {
+    "@silvermelon233/rpc-demo-stub": "github:SilverMelon233/rpc-stub#main",
+    "@grpc/grpc-js":                "^1.13.0",
+    "@protobuf-ts/grpc-transport":  "^2.11.1",
+    "@protobuf-ts/runtime":         "^2.11.1",
+    "@protobuf-ts/runtime-rpc":     "^2.11.1"
+  }
+}
