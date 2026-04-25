@@ -1,16 +1,16 @@
 plugins {
     id 'java'
     id 'application'
-    id 'com.gradleup.shadow' version '9.0.0-beta9'
+    id 'com.gradleup.shadow' version '9.4.1'
 }
 group = 'com.example'
 repositories { mavenCentral() }
 dependencies {
-    implementation 'io.grpc:grpc-netty-shaded:1.73.0'
-    implementation 'io.grpc:grpc-stub:1.73.0'
-    implementation 'io.grpc:grpc-protobuf:1.73.0'
+    implementation 'io.grpc:grpc-netty-shaded:1.80.0'
+    implementation 'io.grpc:grpc-stub:1.80.0'
+    implementation 'io.grpc:grpc-protobuf:1.80.0'
     implementation 'com.google.protobuf:protobuf-java:4.34.1'
-    implementation 'com.google.guava:guava:33.4.8-jre'
+    implementation 'com.google.guava:guava:33.6.0-jre'
     compileOnly 'org.apache.tomcat:annotations-api:6.0.53'
 }
 application {
